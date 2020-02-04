@@ -1,0 +1,101 @@
+#title{
+  color: #779ecb !important;
+  font-size: 1.5rem;
+}
+#footer{
+  background-color: #f8f9fa;
+}
+#getLoc{
+  margin-top: .5rem;
+  margin-left: .25rem;
+}
+#map{
+  position: static !important;
+  overflow: auto !important;
+}
+#welcome {
+  position: absolute;
+  background-color: rgba(255,255,255,0.65);
+  text-align: center;
+  top: 33%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 600%;
+  padding-top: 2%;
+  padding-bottom: 6%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+#rest {
+  position: absolute;
+  text-align: center;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 350%;
+  margin-top: 50px;
+}
+#myBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 36%;
+    z-index: 99;
+    font-size: 18px;
+    opacity: 75%;
+}
+
+h1{
+  padding-top: 1rem;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+h4{
+  text-align: center;
+}
+ul{
+  padding-left: 0;
+}
+
+.jumbotron{
+  background-color: rgba(255,255,255,0.5);
+}
+.container{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.my-3{
+  text-align: left;
+  border: 1px dashed #000;
+  width: 50%;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.parallax1 {
+  background: url("/imgs/Background.jpg") no-repeat;
+  min-height: 1000px;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.parallax2 {
+  background: url("/imgs/Background.jpg") no-repeat;
+  min-height: 1000px;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.display-4 {
+  margin-top:50px;
+}
+.column {
+  float: left;
+  width: 33.33%;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

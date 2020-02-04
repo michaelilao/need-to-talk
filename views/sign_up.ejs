@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<%- include ('./partials/header') %>
+<body>
+<%- include ('./partials/navbar') %>
+<h1 class="display-4">Broadcast Help Sign Up</h1>
+<div class="container border border-light rounded">
+  <form action="/sign_up" method="POST">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputName">Name</label>
+        <input type="name" class="form-control" name="name" id="Name" placeholder="Name">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputEmail">Email</label>
+        <input type="email" class="form-control" name="email" id="Email" placeholder="Email">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-2">
+          <label for="inputName">End Session Time</label>
+          <input type="time"class="form-control" name="time" id="Time" placeholder="Time">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputName">Qualifications</label>
+        <input type="name" class="form-control" name="qual"  id="Quals" placeholder="Qualifications">
+      </div>
+    <div class="form-group col-md-6">
+      <label for="inputName">Location</label>
+      <input type="name" class="form-control" name="location"  id="location" placeholder="Location" readonly="readonly">
+      <button type="button"onclick="getLocation()" id="getLoc" class="btn btn-info">Get Location</button>
+    </div>
+  </div>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <span>Additional Comments</span>
+        <textarea class="form-control" rows="4" name="add" id="add"></textarea>
+      </div>
+    </div>
+    <div class="form-row">
+      <button type="submit" class="btn btn-primary">Broadcast Help</button>
+    </div>
+  </form>
+</div>
+
+<div class="text-center">
+  Copyright © Divesh Chudasama, Michael Ilao, Ryan Lee, Gordon Zhang 2019
+</div>
+</body>
+<script src="/js/getLocation.js"></script>
+<%- include ('./partials/footer') %>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "need-2-talk-master",
+  "version": "1.0.0",
+  "description": "Delta-Hacks Project",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "geolocation": "^0.2.0",
+    "google-geolocation": "^1.0.2",
+    "jsdom": "^16.0.1",
+    "radar-sdk-js": "^1.1.0",
+    "unirest": "^0.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node app.js",
+    "main": "node app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

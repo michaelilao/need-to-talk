@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<%- include ('./partials/header') %>
+<body>
+<%- include ('./partials/navbar') %>
+<div class="container">
+  <div id="map">
+  </div>
+</div>
+</body>
+  <script>
+        var map;
+        function initMap() {
+          // Styles a map in night mode.
+          var map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 43.261748, lng: -79.918892},
+            zoom: 12
+          });
+          var iconBase =
+              'https://developers.google.com/maps/documentation/javascript/examples/full/images/';
+          var iconBase2 = 'http://maps.google.com/mapfiles/kml/shapes/'
+          var icons = {
+            parking: {
+              icon: iconBase + 'parking_lot_maps.png'
+            },
+            library: {
+              icon: iconBase + 'library_maps.png'
+            },
+            info: {
+              icon: iconBase + 'info-i_maps.png'
+            },
+            person: {
+                icon: iconBase2 + 'man.png'
+            }
+          };
+          var features = [];
+          var temp = []
+          <%for(var i =0;i<helpers.length;i++) {%>
+            var lat = <%=helpers[i][3]%>;
+            var long = <%=helpers[i][2]%>;
+            var name = "<%=helpers[i][0]%>";
+            var email = "<%=helpers[i][1]%>";
+            var qual = "<%=helpers[i][4]%>";
+            var additional_comments = "<%=helpers[i][5]%>";
+            var helper =   {
+                position: new google.maps.LatLng(lat, long),
+                type: 'person',
+                name: name,
+                email: email,
+                qual: qual,
+                additional_comments: additional_comments
+                  };
+              console.log(helper);
+            features.push(helper);
+          <%}%>
+          const infowindow = new google.maps.InfoWindow();
+          function placeMarker(obj) {
+            const marker = new google.maps.Marker({
+              position : obj.position,
+              icon: icons[obj.type].icon,
+              map : map
+            });
+            marker.addListener( 'click', function(){
+              console.log(obj.name);
+              infowindow.close();
+              infowindow.setContent(`<div id ='infowindow'><h4>${obj.name} </h1>  <ul><li>${obj.email}</li><li>${obj.qual}</li><li>${obj.additional_comments}</li>             </ul></div>`);
+              infowindow.open(map, marker);
+            });
+          }
+          features.forEach(placeMarker);
+        }
+  </script>
+  <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiDNQL0qW208ZZq0jaeesjENohjToJjus&callback=initMap">
+  </script>
+  <%- include ('./partials/footer') %>
+  </html>
